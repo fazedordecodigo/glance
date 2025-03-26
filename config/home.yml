@@ -1,0 +1,84 @@
+- name: Home
+  hide-desktop-navigation: true
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+
+        - type: rss
+          limit: 10
+          collapse-after: 3
+          cache: 12h
+          feeds:
+            - url: https://www.tabnews.com.br/recentes/rss
+              title: Tabnews
+            - url: https://pyfound.blogspot.com/feeds/posts/default
+              title: PFS News
+            - url: https://blog.python.org/feeds/posts/default?alt=rss
+              title: Python News
+            - url: https://nodejs.org/en/feed/blog.xml
+              title: Nodejs Blog
+
+        - type: twitch-channels
+          channels:
+            - theprimeagen
+            - j_blow
+            - piratesoftware
+            - cohhcarnage
+            - christitustech
+            - EJ_SA
+
+    - size: full
+      widgets:
+        - type: group
+          widgets:
+            - type: hacker-news
+            - type: lobsters
+
+        - type: videos
+          channels:
+            - UC1VZDEtGNxfQzh7EYcD2frg # Mano Deyvin
+            - UCZxr48h7_qEXuM1imy6NcCg # Compilado Codigo Fonte
+
+        - type: group
+          widgets:
+            - type: reddit
+              subreddit: brdev
+              show-thumbnails: true
+
+    - size: small
+      widgets:
+        - type: weather
+          location: Maricá, Rio de Janeiro, Brazil
+          units: metric
+          hour-format: 24h
+
+        - type: markets
+          markets:
+            - symbol: SPY
+              name: S&P 500
+            - symbol: BTC-USD
+              name: Bitcoin
+            - symbol: NVDA
+              name: NVIDIA
+            - symbol: AAPL
+              name: Apple
+            - symbol: MSFT
+              name: Microsoft
+
+        - type: releases
+          cache: 1d
+          # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+          # read-only token from your Github account settings and use it here to increase the limit.
+          # token: ...
+          repositories:
+            - glanceapp/glance
+            - go-gitea/gitea
+            - immich-app/immich
+            - syncthing/syncthing
+            - microsoft/vscode
+
+        - type: dns-stats
+          url: https://192.168.0.50
+          password: ${PIHOLE_PASSWORD}
