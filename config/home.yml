@@ -24,6 +24,9 @@
             - UCKTAQCwM-RlQzjTNFEnvOYQ # Só 1 minutinho
             - UCyHOBY6IDZF9zOKJPou2Rgg # Lucas Montano
             - UC-PjJT0RVURj_L6D8D3WIww # Castro Bothers
+            - UChkr2ZzQySgFjJIqFeFp_kw # Capital Financeiro
+            - UC-bd2hrIl-TSSpnFI2LE9Gw # D.E.P.L.O.Y
+            - UCQnpN5AUd36lnMHuIl_rihA # Caio Delgado
 
         - type: group
           widgets:
@@ -37,6 +40,19 @@
                 - url: https://www.jw.org/pt/Novidades/rss/WhatsNewWebArticles/feed.xml
                   title: JW
             - type: rss
+              title: Tech
+              limit: 10
+              collapse-after: 6
+              cache: 12h
+              style: detailed-list
+              feeds:
+                - url: https://thenewstack.io/blog/feed/
+                  title: The New Stack
+                - url: https://feeds.simplecast.com/IgzWks06?utm_source=the+new+stack&utm_medium=referral&utm_content=inline-mention&utm_campaign=tns+platform
+                  title: The New Stack Makers Podcast
+                - url: https://feeds.feedburner.com/luizcarlosfaria
+                  title: Gago.io
+            - type: rss
               title: Tabnews
               limit: 10
               collapse-after: 6
@@ -46,6 +62,7 @@
                 - url: https://www.tabnews.com.br/recentes/rss
                   title: Tabnews
             - type: rss
+              title: Miscellaneous
               limit: 10
               collapse-after: 6
               cache: 12h
@@ -57,8 +74,6 @@
                   title: Python News
                 - url: https://nodejs.org/en/feed/blog.xml
                   title: Nodejs Blog
-
-
 
     - size: small
       widgets:
