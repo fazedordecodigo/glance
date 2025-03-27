@@ -6,49 +6,70 @@
         - type: calendar
           first-day-of-week: monday
 
-        - type: rss
-          limit: 10
-          collapse-after: 3
-          cache: 12h
-          feeds:
-            - url: https://www.tabnews.com.br/recentes/rss
-              title: Tabnews
-            - url: https://pyfound.blogspot.com/feeds/posts/default
-              title: PFS News
-            - url: https://blog.python.org/feeds/posts/default?alt=rss
-              title: Python News
-            - url: https://nodejs.org/en/feed/blog.xml
-              title: Nodejs Blog
-
-        - type: twitch-channels
-          channels:
-            - theprimeagen
-            - j_blow
-            - piratesoftware
-            - cohhcarnage
-            - christitustech
-            - EJ_SA
-
-    - size: full
-      widgets:
-        - type: group
-          widgets:
-            - type: hacker-news
-            - type: lobsters
-
-        - type: videos
-          channels:
-            - UC1VZDEtGNxfQzh7EYcD2frg # Mano Deyvin
-            - UCZxr48h7_qEXuM1imy6NcCg # Compilado Codigo Fonte
-
         - type: group
           widgets:
             - type: reddit
               subreddit: brdev
               show-thumbnails: true
 
+    - size: full
+      widgets:
+        - type: videos
+          style: grid-cards
+          channels:
+            - UC1VZDEtGNxfQzh7EYcD2frg # Mano Deyvin
+            - UCZxr48h7_qEXuM1imy6NcCg # Compilado Codigo Fonte
+            - UCDBEEvZAvFW7oP-QHUgE3GQ # HackStation
+            - UCEf5U1dB5a2e2S-XUlnhxSA # Diolinux
+            - UCKTAQCwM-RlQzjTNFEnvOYQ # Só 1 minutinho
+            - UCyHOBY6IDZF9zOKJPou2Rgg # Lucas Montano
+            - UC-PjJT0RVURj_L6D8D3WIww # Castro Bothers
+
+        - type: group
+          widgets:
+            - type: rss
+              title: JW
+              limit: 10
+              collapse-after: 6
+              cache: 12h
+              style: detailed-list
+              feeds:
+                - url: https://www.jw.org/pt/Novidades/rss/WhatsNewWebArticles/feed.xml
+                  title: JW
+            - type: rss
+              title: Tabnews
+              limit: 10
+              collapse-after: 6
+              cache: 12h
+              style: detailed-list
+              feeds:
+                - url: https://www.tabnews.com.br/recentes/rss
+                  title: Tabnews
+            - type: rss
+              limit: 10
+              collapse-after: 6
+              cache: 12h
+              style: detailed-list
+              feeds:
+                - url: https://pyfound.blogspot.com/feeds/posts/default
+                  title: PFS News
+                - url: https://blog.python.org/feeds/posts/default?alt=rss
+                  title: Python News
+                - url: https://nodejs.org/en/feed/blog.xml
+                  title: Nodejs Blog
+
+
+
     - size: small
       widgets:
+        - type: server-stats
+          servers:
+            - type: local
+              name: Services
+             
+        - type: docker-containers
+          hide-by-default: false
+
         - type: weather
           location: Maricá, Rio de Janeiro, Brazil
           units: metric
@@ -78,7 +99,3 @@
             - immich-app/immich
             - syncthing/syncthing
             - microsoft/vscode
-
-        - type: dns-stats
-          url: https://192.168.0.50
-          password: ${PIHOLE_PASSWORD}
